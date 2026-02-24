@@ -137,7 +137,7 @@ export default function KalbacaProject() {
                   <div className="absolute left-0 top-1 size-6 bg-white dark:bg-slate-800 border-2 border-primary rounded-full z-10" />
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Clean Architecture</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    The code is split into three clear layers — Data, Domain, and Presentation — so it stays organized and easy to test.
+                    The code is split into three clear layers Data, Domain, and Presentation so it stays organized and easy to test.
                   </p>
                 </div>
                 {/* Item 2 */}

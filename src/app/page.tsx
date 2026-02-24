@@ -19,7 +19,7 @@ export default function Home() {
               <a className="text-sm font-medium text-slate-500 hover:text-primary transition-colors" href="#contact">Contact</a>
             </div>
             <ThemeToggle />
-            <a className="hidden sm:flex items-center justify-center h-9 px-4 rounded-full bg-slate-900 text-white text-xs font-semibold hover:bg-slate-700 transition-all dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200" href="#projects">
+            <a className="hidden sm:flex items-center justify-center h-9 px-4 rounded-full bg-slate-900 text-white text-xs font-semibold hover:bg-slate-700 transition-all dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200" href="#contact">
               Let&apos;s Talk
             </a>
           </div>
@@ -39,7 +39,7 @@ export default function Home() {
             MHD Rafy Firdaus
           </h1>
           <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 font-medium max-w-2xl leading-relaxed">
-            Frontend Developer — <span className="text-slate-900 dark:text-slate-200">Web &amp; Mobile App Expert</span>. <br className="hidden md:block" />I build fast, beautiful, and easy-to-use applications.
+            Frontend Developer <span className="text-slate-900 dark:text-slate-200">Web &amp; Mobile App Expert</span>. <br className="hidden md:block" />I build fast, beautiful, and easy-to-use applications.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <a className="group flex items-center justify-center h-12 px-8 rounded-full bg-primary hover:bg-blue-600 text-white font-semibold shadow-lg shadow-blue-500/20 transition-all transform hover:-translate-y-0.5" href="#projects">

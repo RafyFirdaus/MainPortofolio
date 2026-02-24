@@ -76,7 +76,7 @@ export default function BeatifyProject() {
               </h3>
               <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
                 <p>
-                  <strong className="text-slate-900 dark:text-white">The Problem:</strong> People often have their music in two different places — some on YouTube and some saved as files on their computer. Switching between a browser and a music player all the time is annoying and breaks the listening flow.
+                  <strong className="text-slate-900 dark:text-white">The Problem:</strong> People often have their music in two different places some on YouTube and some saved as files on their computer. Switching between a browser and a music player all the time is annoying and breaks the listening flow.
                 </p>
                 <p>
                   <strong className="text-slate-900 dark:text-white">The Solution:</strong> Beatify is a smart web app that puts all your music in one place. It combines YouTube videos and local audio files into a single custom player, so you never have to switch between apps again.
