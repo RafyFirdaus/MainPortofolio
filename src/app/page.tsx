@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 export default function Home() {
   return (
@@ -16,6 +18,7 @@ export default function Home() {
               <a className="text-sm font-medium text-slate-500 hover:text-primary transition-colors" href="#about">About</a>
               <a className="text-sm font-medium text-slate-500 hover:text-primary transition-colors" href="#contact">Contact</a>
             </div>
+            <ThemeToggle />
             <a className="hidden sm:flex items-center justify-center h-9 px-4 rounded-full bg-slate-900 text-white text-xs font-semibold hover:bg-slate-700 transition-all dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200" href="#projects">
               Let&apos;s Talk
             </a>
@@ -36,7 +39,7 @@ export default function Home() {
             MHD Rafy Firdaus
           </h1>
           <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 font-medium max-w-2xl leading-relaxed">
-            Hybrid Frontend Engineer — <span className="text-slate-900 dark:text-slate-200">Web &amp; Mobile Specialist</span>. <br className="hidden md:block" />Building high-performance interfaces with pixel-perfect precision.
+            Frontend Developer — <span className="text-slate-900 dark:text-slate-200">Web &amp; Mobile App Expert</span>. <br className="hidden md:block" />I build fast, beautiful, and easy-to-use applications.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <a className="group flex items-center justify-center h-12 px-8 rounded-full bg-primary hover:bg-blue-600 text-white font-semibold shadow-lg shadow-blue-500/20 transition-all transform hover:-translate-y-0.5" href="#projects">
@@ -54,7 +57,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-10 px-2">
             <div>
               <h2 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Tech Stack</h2>
-              <p className="mt-2 text-slate-500 dark:text-slate-400">The tools I use to build digital products.</p>
+              <p className="mt-2 text-slate-500 dark:text-slate-400">The tools I use to build websites and apps.</p>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[minmax(180px,auto)]">
@@ -68,7 +71,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Frontend Web</h3>
-                  <p className="text-slate-500 dark:text-slate-400 mb-6">Specialized in React ecosystem building responsive, accessible, and performant web applications.</p>
+                  <p className="text-slate-500 dark:text-slate-400 mb-6">Focusing on React to build fast and great websites.</p>
                   <div className="flex flex-wrap gap-2">
                     <span className="px-3 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium">React.js</span>
                     <span className="px-3 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium">Next.js</span>
@@ -91,7 +94,7 @@ export default function Home() {
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 dark:text-white">Mobile Apps</h3>
                   </div>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm mb-4">Cross-platform excellence with native performance.</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm mb-4">Building great apps for Android that run very fast.</p>
                   <div className="flex gap-2">
                     <span className="px-3 py-1 rounded-md bg-sky-50 dark:bg-sky-900/20 text-sky-700 dark:text-sky-300 text-sm font-medium border border-sky-100 dark:border-sky-800">Flutter</span>
                     <span className="px-3 py-1 rounded-md bg-sky-50 dark:bg-sky-900/20 text-sky-700 dark:text-sky-300 text-sm font-medium border border-sky-100 dark:border-sky-800">Dart</span>
@@ -125,7 +128,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 px-2">
             <div>
               <h2 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Selected Work</h2>
-              <p className="mt-2 text-slate-500 dark:text-slate-400">Recent projects highlighting technical depth.</p>
+              <p className="mt-2 text-slate-500 dark:text-slate-400">Some of my best recent projects.</p>
             </div>
             <a className="hidden md:flex items-center text-primary font-medium hover:text-blue-700 transition-colors mt-4 md:mt-0" href="https://github.com/RafyFirdaus">
               View GitHub
@@ -139,7 +142,7 @@ export default function Home() {
                   src="/images/projects/thumbnail-1.png"
                   alt="Manajemen Barang Hilang"
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-contain transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
@@ -148,14 +151,16 @@ export default function Home() {
                   <p className="text-sm text-slate-500 mt-1 dark:text-slate-400">AI-Powered Lost &amp; Found System</p>
                 </div>
                 <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 line-clamp-3">
-                  A smart tracking system leveraging Hugging Face AI for image recognition to match lost items with found reports in real-time.
+                  A smart system that uses AI image recognition to help people find their lost items quickly.
                 </p>
                 <div className="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                   <div className="flex gap-2">
-                    <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 bg-slate-50 dark:bg-slate-800 px-2 py-1 rounded">Python</span>
+                    <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 bg-slate-50 dark:bg-slate-800 px-2 py-1 rounded">FLUTTER</span>
                     <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 bg-slate-50 dark:bg-slate-800 px-2 py-1 rounded">AI</span>
                   </div>
-                  <span className="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer text-xl">arrow_outward</span>
+                  <Link href="/projects/manajemen-barang-hilang">
+                    <span className="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer text-xl">arrow_outward</span>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -166,7 +171,7 @@ export default function Home() {
                   src="/images/projects/thumbnail-2.png"
                   alt="KalBaCa (e-FluidCalc)"
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-contain transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
@@ -175,14 +180,16 @@ export default function Home() {
                   <p className="text-sm text-slate-500 mt-1 dark:text-slate-400">Medical Fluid Balance Calculator</p>
                 </div>
                 <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 line-clamp-3">
-                  A critical tool for medical professionals to calculate fluid balance. Features offline capabilities and real-time sync via Firebase.
+                  A helpful tool for doctors and nurses to calculate patient fluids. It works offline and saves data online using Firebase.
                 </p>
                 <div className="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                   <div className="flex gap-2">
                     <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 bg-slate-50 dark:bg-slate-800 px-2 py-1 rounded">Flutter</span>
                     <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 bg-slate-50 dark:bg-slate-800 px-2 py-1 rounded">Firebase</span>
                   </div>
-                  <span className="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer text-xl">arrow_outward</span>
+                  <Link href="/projects/kalbaca">
+                    <span className="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer text-xl">arrow_outward</span>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -193,7 +200,7 @@ export default function Home() {
                   src="/images/projects/thumbnail-3.png"
                   alt="Beatify"
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-contain transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
@@ -202,14 +209,16 @@ export default function Home() {
                   <p className="text-sm text-slate-500 mt-1 dark:text-slate-400">Web Music Player</p>
                 </div>
                 <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6 line-clamp-3">
-                  A sleek web-based music player. Integrates with YouTube API for an endless library, wrapped in a modern React interface.
+                  A beautiful web music player. It uses YouTube to give you endless music in a modern design.
                 </p>
                 <div className="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                   <div className="flex gap-2">
                     <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 bg-slate-50 dark:bg-slate-800 px-2 py-1 rounded">React</span>
                     <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 bg-slate-50 dark:bg-slate-800 px-2 py-1 rounded">API</span>
                   </div>
-                  <span className="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer text-xl">arrow_outward</span>
+                  <Link href="/projects/beatify">
+                    <span className="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer text-xl">arrow_outward</span>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -225,14 +234,14 @@ export default function Home() {
         <footer className="max-w-4xl mx-auto py-20 mt-10 border-t border-slate-200 dark:border-slate-800" id="contact">
           <div className="flex flex-col items-center text-center">
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Ready to build something amazing?</h2>
-            <p className="text-slate-500 dark:text-slate-400 mb-8 max-w-md">Currently open for freelance projects and collaboration opportunities. Let&apos;s create high-quality software together.</p>
+            <p className="text-slate-500 dark:text-slate-400 mb-8 max-w-md">I am available for freelance work and new projects. Let&apos;s build great software together.</p>
             <a className="text-3xl md:text-5xl font-bold text-primary hover:text-blue-600 transition-colors tracking-tight mb-12" href="mailto:rafy@example.com">
               rafyfirdaus20@gmail.com
             </a>
             <div className="flex gap-8 mb-12">
               <a className="flex flex-col items-center gap-2 group" href="https://github.com/RafyFirdaus">
                 <div className="size-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-all">
-                  <span className="material-symbols-outlined">code</span>
+                  <Image src="/images/logos/github.png" alt="GitHub" width={24} height={24} />
                 </div>
                 <span className="text-xs font-medium text-slate-500 group-hover:text-primary transition-colors">GitHub</span>
               </a>
