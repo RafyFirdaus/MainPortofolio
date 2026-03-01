@@ -1,6 +1,13 @@
+"use client";
+
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
+import { dictionaries } from '@/locales/dictionaries';
 
 export default function ManajemenBarangHilangProject() {
+  const { language } = useLanguage();
+  const t = dictionaries[language];
+
   return (
     <>
       {/* Top Navigation */}
@@ -10,14 +17,14 @@ export default function ManajemenBarangHilangProject() {
             <div className="size-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
               <span className="material-symbols-outlined text-xl">code</span>
             </div>
-            <span className="font-bold text-slate-900 dark:text-white tracking-tight">PORTFOLIO</span>
+            <span className="font-bold text-slate-900 dark:text-white tracking-tight">{t.nav.portfolio}</span>
           </Link>
           <Link
             href="/"
             className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-primary transition-colors dark:text-slate-400"
           >
             <span className="material-symbols-outlined text-lg">arrow_back</span>
-            Back to Home
+            {t.nav.backToHome}
           </Link>
         </div>
       </header>
@@ -27,10 +34,10 @@ export default function ManajemenBarangHilangProject() {
         <section className="flex flex-col items-center text-center gap-6 max-w-4xl mx-auto">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1]">
-              Manajemen Barang Hilang
+              {t.projects.mbh.title}
             </h1>
             <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-2xl mx-auto">
-              A smart reporting platform that uses AI to match lost items with their owners quickly and accurately.
+              {t.projects.mbh.heroDesc}
             </p>
           </div>
           {/* Tech Stack Badges */}
@@ -66,14 +73,14 @@ export default function ManajemenBarangHilangProject() {
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <span className="material-symbols-outlined text-primary">lightbulb</span>
-                The Context
+                {t.projectDetails.theContext}
               </h3>
               <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
                 <p>
-                  <strong className="text-slate-900 dark:text-white">The Problem:</strong> In campuses and public places, lost item reports are usually messy and scattered across chat groups or physical bulletin boards. It is very hard to match a lost item report with a found item report. On top of that, there is no clear way to verify who really owns the item, which makes the claiming process risky and open to fraud.
+                  <strong className="text-slate-900 dark:text-white">{t.projectDetails.theProblem}</strong> {t.projectDetails.mbh.problemText}
                 </p>
                 <p>
-                  <strong className="text-slate-900 dark:text-white">The Solution:</strong> A Flutter mobile app that brings the entire Lost &amp; Found system into one place. Users can easily report a lost item or post a found item with photos and location details. The app has a smart AI engine that automatically scans and matches descriptions from both sides, so security guards or admins can quickly verify and connect the real owner with their belongings.
+                  <strong className="text-slate-900 dark:text-white">{t.projectDetails.theSolution}</strong> {t.projectDetails.mbh.solutionText}
                 </p>
               </div>
             </div>
@@ -82,35 +89,35 @@ export default function ManajemenBarangHilangProject() {
 
             {/* Key Features Grid */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Key Features</h3>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{t.projectDetails.keyFeatures}</h3>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="flex flex-col p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                   <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                     <span className="material-symbols-outlined">psychology</span>
                   </div>
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">AI-Powered Item Matching</h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Automatically calculates how similar a lost report is to a found report using an NLP model (Natural Language Processing). No more searching through items one by one.</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t.projectDetails.mbh.feature1Title}</h4>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.projectDetails.mbh.feature1Desc}</p>
                 </div>
                 <div className="flex flex-col p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                   <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                     <span className="material-symbols-outlined">photo_camera</span>
                   </div>
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">Rich Media Reporting</h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Report items with photos taken from the camera or gallery. Images are uploaded to the server in the background so the app stays fast and smooth.</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t.projectDetails.mbh.feature2Title}</h4>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.projectDetails.mbh.feature2Desc}</p>
                 </div>
                 <div className="flex flex-col p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                   <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                     <span className="material-symbols-outlined">admin_panel_settings</span>
                   </div>
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">Role-Based Access (RBAC)</h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Different users see different things. Regular users can report items, while security guards and admins can verify claims and approve matches in real-time.</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t.projectDetails.mbh.feature3Title}</h4>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.projectDetails.mbh.feature3Desc}</p>
                 </div>
                 <div className="flex flex-col p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                   <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                     <span className="material-symbols-outlined">verified</span>
                   </div>
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">Claim &amp; Verification System</h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">A step-by-step process to claim items, requiring approval from security staff. This prevents fraud and makes sure items go back to the right owner.</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t.projectDetails.mbh.feature4Title}</h4>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.projectDetails.mbh.feature4Desc}</p>
                 </div>
               </div>
             </div>
@@ -121,7 +128,7 @@ export default function ManajemenBarangHilangProject() {
             <div className="bg-slate-50 dark:bg-slate-800/50 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-slate-700">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                 <span className="material-symbols-outlined text-slate-500">code</span>
-                Technical Deep-Dive
+                {t.projectDetails.technicalDeepDive}
               </h3>
               <div className="space-y-6 relative">
                 {/* Connecting Line */}
@@ -129,33 +136,33 @@ export default function ManajemenBarangHilangProject() {
                 {/* Item 1 */}
                 <div className="relative pl-8">
                   <div className="absolute left-0 top-1 size-6 bg-white dark:bg-slate-800 border-2 border-primary rounded-full z-10" />
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Service-Repository Pattern</h4>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">{t.projectDetails.mbh.tech1Title}</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    The app is built with a clean architecture that separates the UI layer (screens) from the business logic layer (services), keeping the code organized and easy to maintain.
+                    {t.projectDetails.mbh.tech1Desc}
                   </p>
                 </div>
                 {/* Item 2 */}
                 <div className="relative pl-8">
                   <div className="absolute left-0 top-1 size-6 bg-white dark:bg-slate-800 border-2 border-primary rounded-full z-10" />
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">AI / NLP Integration</h4>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">{t.projectDetails.mbh.tech2Title}</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    Uses the Hugging Face Inference API with the <em>all-MiniLM-L6-v2</em> sentence transformer model. The MatchingService sends report texts to the model and gets back a similarity score to find the best matches.
+                    {t.projectDetails.mbh.tech2Desc}
                   </p>
                 </div>
                 {/* Item 3 */}
                 <div className="relative pl-8">
                   <div className="absolute left-0 top-1 size-6 bg-white dark:bg-slate-800 border-2 border-primary rounded-full z-10" />
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">RESTful API + Node.js</h4>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">{t.projectDetails.mbh.tech3Title}</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    Connects to a Node.js backend deployed on Vercel using the http package. Handles all CRUD operations, image uploads (multipart/form-data), and user authentication through REST endpoints.
+                    {t.projectDetails.mbh.tech3Desc}
                   </p>
                 </div>
                 {/* Item 4 */}
                 <div className="relative pl-8">
                   <div className="absolute left-0 top-1 size-6 bg-white dark:bg-slate-800 border-2 border-primary rounded-full z-10" />
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Security &amp; Performance</h4>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">{t.projectDetails.mbh.tech4Title}</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    JWT auth tokens are stored securely using flutter_secure_storage. The app uses Dart&apos;s async features (Future &amp; scheduleMicrotask) to keep the UI smooth while fetching large data or uploading images.
+                    {t.projectDetails.mbh.tech4Desc}
                   </p>
                 </div>
               </div>
@@ -169,14 +176,14 @@ export default function ManajemenBarangHilangProject() {
         <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
             <span className="material-symbols-outlined text-primary">search</span>
-            <span className="text-slate-500 text-sm font-medium">© 2026 MHD Rafy Firdaus. All rights reserved.</span>
+            <span className="text-slate-500 text-sm font-medium">{t.footer.rights}</span>
           </div>
           <div className="flex gap-6">
             <Link href="/" className="text-slate-400 hover:text-primary transition-colors text-sm">
-              Portfolio
+              {t.footer.portfolio}
             </Link>
             <a href="https://github.com/RafyFirdaus" className="text-slate-400 hover:text-primary transition-colors text-sm">
-              GitHub
+              {t.footer.github}
             </a>
           </div>
         </div>

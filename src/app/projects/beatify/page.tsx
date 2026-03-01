@@ -1,6 +1,13 @@
+"use client";
+
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
+import { dictionaries } from '@/locales/dictionaries';
 
 export default function BeatifyProject() {
+  const { language } = useLanguage();
+  const t = dictionaries[language];
+
   return (
     <>
       {/* Top Navigation */}
@@ -10,14 +17,14 @@ export default function BeatifyProject() {
             <div className="size-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
               <span className="material-symbols-outlined text-xl">code</span>
             </div>
-            <span className="font-bold text-slate-900 dark:text-white tracking-tight">PORTFOLIO</span>
+            <span className="font-bold text-slate-900 dark:text-white tracking-tight">{t.nav.portfolio}</span>
           </Link>
           <Link
             href="/"
             className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-primary transition-colors dark:text-slate-400"
           >
             <span className="material-symbols-outlined text-lg">arrow_back</span>
-            Back to Home
+            {t.nav.backToHome}
           </Link>
         </div>
       </header>
@@ -27,10 +34,10 @@ export default function BeatifyProject() {
         <section className="flex flex-col items-center text-center gap-6 max-w-4xl mx-auto">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1]">
-              Beatify
+              {t.projects.beatify.title}
             </h1>
             <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-2xl mx-auto">
-              Play your YouTube music and local audio files together in one beautiful player.
+              {t.projects.beatify.heroDesc}
             </p>
           </div>
           {/* Tech Stack Badges */}
@@ -51,7 +58,7 @@ export default function BeatifyProject() {
               allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
               allowFullScreen
               frameBorder="0"
-              title="KalBaCa Product Demo"
+              title="Beatify Product Demo"
             ></iframe>
           </div>
         </section>
@@ -64,14 +71,14 @@ export default function BeatifyProject() {
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <span className="material-symbols-outlined text-primary">lightbulb</span>
-                The Context
+                {t.projectDetails.theContext}
               </h3>
               <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
                 <p>
-                  <strong className="text-slate-900 dark:text-white">The Problem:</strong> People often have their music in two different places some on YouTube and some saved as files on their computer. Switching between a browser and a music player all the time is annoying and breaks the listening flow.
+                  <strong className="text-slate-900 dark:text-white">{t.projectDetails.theProblem}</strong> {t.projectDetails.beatify.problemText}
                 </p>
                 <p>
-                  <strong className="text-slate-900 dark:text-white">The Solution:</strong> Beatify is a smart web app that puts all your music in one place. It combines YouTube videos and local audio files into a single custom player, so you never have to switch between apps again.
+                  <strong className="text-slate-900 dark:text-white">{t.projectDetails.theSolution}</strong> {t.projectDetails.beatify.solutionText}
                 </p>
               </div>
             </div>
@@ -80,35 +87,35 @@ export default function BeatifyProject() {
 
             {/* Key Features Grid */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Key Features</h3>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{t.projectDetails.keyFeatures}</h3>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="flex flex-col p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                   <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                     <span className="material-symbols-outlined">swap_horiz</span>
                   </div>
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">Hybrid Media Engine</h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Plays YouTube streams and local files without any lag.</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t.projectDetails.beatify.feature1Title}</h4>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.projectDetails.beatify.feature1Desc}</p>
                 </div>
                 <div className="flex flex-col p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                   <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                     <span className="material-symbols-outlined">database</span>
                   </div>
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">Smart Storage</h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Saves your playlists and data in a smart way so nothing is lost.</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t.projectDetails.beatify.feature2Title}</h4>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.projectDetails.beatify.feature2Desc}</p>
                 </div>
                 <div className="flex flex-col p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                   <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                     <span className="material-symbols-outlined">link</span>
                   </div>
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">URL Extractor</h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Just paste any YouTube link and it will work right away.</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t.projectDetails.beatify.feature3Title}</h4>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.projectDetails.beatify.feature3Desc}</p>
                 </div>
                 <div className="flex flex-col p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                   <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                     <span className="material-symbols-outlined">route</span>
                   </div>
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">Client-Side Routing</h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Fast page switching with no reloads, powered by React Router v7.</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t.projectDetails.beatify.feature4Title}</h4>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.projectDetails.beatify.feature4Desc}</p>
                 </div>
               </div>
             </div>
@@ -119,7 +126,7 @@ export default function BeatifyProject() {
             <div className="bg-slate-50 dark:bg-slate-800/50 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-slate-700">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                 <span className="material-symbols-outlined text-slate-500">code</span>
-                Technical Deep-Dive
+                {t.projectDetails.technicalDeepDive}
               </h3>
               <div className="space-y-6 relative">
                 {/* Connecting Line */}
@@ -127,33 +134,33 @@ export default function BeatifyProject() {
                 {/* Item 1 */}
                 <div className="relative pl-8">
                   <div className="absolute left-0 top-1 size-6 bg-white dark:bg-slate-800 border-2 border-primary rounded-full z-10" />
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">React 19</h4>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">{t.projectDetails.beatify.tech1Title}</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    Built with the latest React for fast and smooth UI updates, even when playing music and switching tracks.
+                    {t.projectDetails.beatify.tech1Desc}
                   </p>
                 </div>
                 {/* Item 2 */}
                 <div className="relative pl-8">
                   <div className="absolute left-0 top-1 size-6 bg-white dark:bg-slate-800 border-2 border-primary rounded-full z-10" />
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Smart Storage Split</h4>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">{t.projectDetails.beatify.tech2Title}</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    Splits data into small metadata and large audio payloads to save space and keep the app fast.
+                    {t.projectDetails.beatify.tech2Desc}
                   </p>
                 </div>
                 {/* Item 3 */}
                 <div className="relative pl-8">
                   <div className="absolute left-0 top-1 size-6 bg-white dark:bg-slate-800 border-2 border-primary rounded-full z-10" />
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Player Sync Engine</h4>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">{t.projectDetails.beatify.tech3Title}</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    Keeps YouTube and HTML5 audio perfectly in sync using requestAnimationFrame for a super smooth progress bar.
+                    {t.projectDetails.beatify.tech3Desc}
                   </p>
                 </div>
                 {/* Item 4 */}
                 <div className="relative pl-8">
                   <div className="absolute left-0 top-1 size-6 bg-white dark:bg-slate-800 border-2 border-primary rounded-full z-10" />
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Tailwind CSS</h4>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">{t.projectDetails.beatify.tech4Title}</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    Uses utility-first CSS for a clean, responsive design that looks great on any screen size.
+                    {t.projectDetails.beatify.tech4Desc}
                   </p>
                 </div>
               </div>
@@ -167,14 +174,14 @@ export default function BeatifyProject() {
         <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
             <span className="material-symbols-outlined text-primary">equalizer</span>
-            <span className="text-slate-500 text-sm font-medium">© 2026 MHD Rafy Firdaus. All rights reserved.</span>
+            <span className="text-slate-500 text-sm font-medium">{t.footer.rights}</span>
           </div>
           <div className="flex gap-6">
             <Link href="/" className="text-slate-400 hover:text-primary transition-colors text-sm">
-              Portfolio
+              {t.footer.portfolio}
             </Link>
             <a href="https://github.com/RafyFirdaus" className="text-slate-400 hover:text-primary transition-colors text-sm">
-              GitHub
+              {t.footer.github}
             </a>
           </div>
         </div>

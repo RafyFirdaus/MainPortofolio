@@ -1,6 +1,13 @@
+"use client";
+
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
+import { dictionaries } from '@/locales/dictionaries';
 
 export default function KalbacaProject() {
+  const { language } = useLanguage();
+  const t = dictionaries[language];
+
   return (
     <>
       {/* Top Navigation */}
@@ -10,14 +17,14 @@ export default function KalbacaProject() {
             <div className="size-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
               <span className="material-symbols-outlined text-xl">code</span>
             </div>
-            <span className="font-bold text-slate-900 dark:text-white tracking-tight">PORTFOLIO</span>
+            <span className="font-bold text-slate-900 dark:text-white tracking-tight">{t.nav.portfolio}</span>
           </Link>
           <Link
             href="/"
             className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-primary transition-colors dark:text-slate-400"
           >
             <span className="material-symbols-outlined text-lg">arrow_back</span>
-            Back to Home
+            {t.nav.backToHome}
           </Link>
         </div>
       </header>
@@ -27,10 +34,10 @@ export default function KalbacaProject() {
         <section className="flex flex-col items-center text-center gap-6 max-w-4xl mx-auto">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1]">
-              KalBaCa (e-FluidCalc)
+              {t.projects.kalbaca.title}
             </h1>
             <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-2xl mx-auto">
-              A fast and accurate fluid calculator made for doctors and nurses.
+              {t.projects.kalbaca.heroDesc}
             </p>
           </div>
           {/* Tech Stack Badges */}
@@ -64,14 +71,14 @@ export default function KalbacaProject() {
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <span className="material-symbols-outlined text-primary">lightbulb</span>
-                The Context
+                {t.projectDetails.theContext}
               </h3>
               <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
                 <p>
-                  <strong className="text-slate-900 dark:text-white">The Problem:</strong> Doctors and nurses in children&apos;s wards spend a lot of time calculating how much fluid a patient needs each day. Doing this by hand is slow and can lead to mistakes, especially when things get busy.
+                  <strong className="text-slate-900 dark:text-white">{t.projectDetails.theProblem}</strong> {t.projectDetails.kalbaca.problemText}
                 </p>
                 <p>
-                  <strong className="text-slate-900 dark:text-white">The Solution:</strong> e-FluidCalc does the math for you using a trusted medical formula. Just enter the patient&apos;s weight and temperature, and the app gives you the right fluid amount instantly. This lets medical staff focus more on caring for patients.
+                  <strong className="text-slate-900 dark:text-white">{t.projectDetails.theSolution}</strong> {t.projectDetails.kalbaca.solutionText}
                 </p>
               </div>
             </div>
@@ -80,35 +87,35 @@ export default function KalbacaProject() {
 
             {/* Key Features Grid */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Key Features</h3>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{t.projectDetails.keyFeatures}</h3>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="flex flex-col p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                   <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                     <span className="material-symbols-outlined">group</span>
                   </div>
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">Smart Grouping</h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Sorts patients by age and weight to pick the right formula automatically.</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t.projectDetails.kalbaca.feature1Title}</h4>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.projectDetails.kalbaca.feature1Desc}</p>
                 </div>
                 <div className="flex flex-col p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                   <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                     <span className="material-symbols-outlined">thermostat</span>
                   </div>
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">Auto Fever Adjustment</h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Adds extra fluid when a patient has a fever above 38°C, following medical rules.</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t.projectDetails.kalbaca.feature2Title}</h4>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.projectDetails.kalbaca.feature2Desc}</p>
                 </div>
                 <div className="flex flex-col p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                   <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                     <span className="material-symbols-outlined">lock_person</span>
                   </div>
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">Secure Login</h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Keeps patient data safe with a secure login system and access control.</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t.projectDetails.kalbaca.feature3Title}</h4>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.projectDetails.kalbaca.feature3Desc}</p>
                 </div>
                 <div className="flex flex-col p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
                   <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                     <span className="material-symbols-outlined">cloud_sync</span>
                   </div>
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">Cloud Sync</h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Saves and syncs data across devices using Firebase so you never lose your work.</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t.projectDetails.kalbaca.feature4Title}</h4>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.projectDetails.kalbaca.feature4Desc}</p>
                 </div>
               </div>
             </div>
@@ -119,7 +126,7 @@ export default function KalbacaProject() {
             <div className="bg-slate-50 dark:bg-slate-800/50 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-slate-700">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                 <span className="material-symbols-outlined text-slate-500">code</span>
-                Technical Deep-Dive
+                {t.projectDetails.technicalDeepDive}
               </h3>
               <div className="space-y-6 relative">
                 {/* Connecting Line */}
@@ -127,33 +134,33 @@ export default function KalbacaProject() {
                 {/* Item 1 */}
                 <div className="relative pl-8">
                   <div className="absolute left-0 top-1 size-6 bg-white dark:bg-slate-800 border-2 border-primary rounded-full z-10" />
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Clean Architecture</h4>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">{t.projectDetails.kalbaca.tech1Title}</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    The code is split into three clear layers Data, Domain, and Presentation so it stays organized and easy to test.
+                    {t.projectDetails.kalbaca.tech1Desc}
                   </p>
                 </div>
                 {/* Item 2 */}
                 <div className="relative pl-8">
                   <div className="absolute left-0 top-1 size-6 bg-white dark:bg-slate-800 border-2 border-primary rounded-full z-10" />
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Holliday-Segar Formula</h4>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">{t.projectDetails.kalbaca.tech2Title}</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    Uses the standard fluid formula: 100ml/kg for the first 10kg, 50ml/kg for the next 10kg, and 20ml/kg for the rest.
+                    {t.projectDetails.kalbaca.tech2Desc}
                   </p>
                 </div>
                 {/* Item 3 */}
                 <div className="relative pl-8">
                   <div className="absolute left-0 top-1 size-6 bg-white dark:bg-slate-800 border-2 border-primary rounded-full z-10" />
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Fever Algorithm</h4>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">{t.projectDetails.kalbaca.tech3Title}</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    When a patient has a fever, the app automatically increases the fluid amount based on their temperature.
+                    {t.projectDetails.kalbaca.tech3Desc}
                   </p>
                 </div>
                 {/* Item 4 */}
                 <div className="relative pl-8">
                   <div className="absolute left-0 top-1 size-6 bg-white dark:bg-slate-800 border-2 border-primary rounded-full z-10" />
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Firebase Backend</h4>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">{t.projectDetails.kalbaca.tech4Title}</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    Uses Cloud Firestore to save data in real-time and Firebase Auth to keep user accounts safe.
+                    {t.projectDetails.kalbaca.tech4Desc}
                   </p>
                 </div>
               </div>
@@ -167,14 +174,14 @@ export default function KalbacaProject() {
         <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
             <span className="material-symbols-outlined text-primary">medical_services</span>
-            <span className="text-slate-500 text-sm font-medium">© 2026 MHD Rafy Firdaus. All rights reserved.</span>
+            <span className="text-slate-500 text-sm font-medium">{t.footer.rights}</span>
           </div>
           <div className="flex gap-6">
             <Link href="/" className="text-slate-400 hover:text-primary transition-colors text-sm">
-              Portfolio
+              {t.footer.portfolio}
             </Link>
             <a href="https://github.com/RafyFirdaus" className="text-slate-400 hover:text-primary transition-colors text-sm">
-              GitHub
+              {t.footer.github}
             </a>
           </div>
         </div>
