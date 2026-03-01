@@ -46,23 +46,15 @@ export default function ManajemenBarangHilangProject() {
 
         {/* Video Showcase */}
         <section className="w-full relative group cursor-pointer">
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-900 shadow-xl shadow-slate-200/50 dark:shadow-black/50 border border-slate-200 dark:border-slate-800">
-            <div
-              className="absolute inset-0 bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700 ease-out"
-              style={{
-                backgroundImage: `url('https://lh3.googleusercontent.com/aida/AOfcidWZ4egI-3AQBW5Vbe1iCNMVLfvPNVQ87Qu5FOWgy0MzXgX0sKO8qEfTCt0CowO6wX54NJdyWuO2T9zY-3OWE83H99PxUKCuEj00ocHvzdPGlAdgAHait7m5YgzOccFMS41p0z3JWuuwMY5qMTfliQAGNiieyxXd49yeJKU-QYMdRz1I8AYum2-ECM0nMAo6pMuw1YpBGLOKk9v9NMJ0gAmK-JX-Ctp6o0Kimw1uEVnmJUXz3mjT9dHOVA')`,
-              }}
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="size-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30 transition-transform group-hover:scale-110 shadow-lg">
-                <span className="material-symbols-outlined text-4xl ml-1">play_arrow</span>
-              </div>
-            </div>
-            <div className="absolute bottom-6 left-6 text-white">
-              <p className="font-semibold text-sm uppercase tracking-widest opacity-80">Product Demo</p>
-              <p className="font-bold text-lg">Watch how it works</p>
-            </div>
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50 dark:shadow-black/50 border border-slate-200 dark:border-slate-800">
+            <iframe
+              src="https://res.cloudinary.com/dhsmcxmeo/video/upload/v1772376054/MBH_rnqjxy.mp4"
+              className="absolute inset-0 w-full h-full"
+              allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+              allowFullScreen
+              frameBorder="0"
+              title="Manajemen Barang Hilang Product Demo"
+            ></iframe>
           </div>
         </section>
 
@@ -166,17 +158,6 @@ export default function ManajemenBarangHilangProject() {
                     JWT auth tokens are stored securely using flutter_secure_storage. The app uses Dart&apos;s async features (Future &amp; scheduleMicrotask) to keep the UI smooth while fetching large data or uploading images.
                   </p>
                 </div>
-              </div>
-            </div>
-            {/* Stats Card */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 text-center">
-                <div className="text-2xl font-black text-primary">AI</div>
-                <div className="text-xs font-medium text-slate-500 uppercase tracking-wide mt-1">NLP Matching</div>
-              </div>
-              <div className="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 text-center">
-                <div className="text-2xl font-black text-primary">RBAC</div>
-                <div className="text-xs font-medium text-slate-500 uppercase tracking-wide mt-1">Role Security</div>
               </div>
             </div>
           </div>

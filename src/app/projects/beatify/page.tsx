@@ -44,23 +44,15 @@ export default function BeatifyProject() {
 
         {/* Video Showcase */}
         <section className="w-full relative group cursor-pointer">
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-900 shadow-xl shadow-slate-200/50 dark:shadow-black/50 border border-slate-200 dark:border-slate-800">
-            <div
-              className="absolute inset-0 bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700 ease-out"
-              style={{
-                backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHY8vVAa84Z-Bzgih78F-oPkAqe0TOQ_ruGo3rTsoWKbXRKlQaqKfYn2-5wHH_xBCPqWZxQOw8g916cVuSBKS-I1WXtl_vb1TtXb4Ox-40LWYPcE27CNsfTz7IV97YW0ZYO3YrNqJD4enkWVR7qKCpP0teBTWe8tiKZ2aQcJcGDklc78NYTyWb6j_TGgCw1Aezb6d0h2yHoPPZgCU-cf5pr6_Aoy_YQ9eb85gTvaKWsTR4W-0ggKGrC8MUQpS33tgcHMpMbkSlXzk')`,
-              }}
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="size-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30 transition-transform group-hover:scale-110 shadow-lg">
-                <span className="material-symbols-outlined text-4xl ml-1">play_arrow</span>
-              </div>
-            </div>
-            <div className="absolute bottom-6 left-6 text-white">
-              <p className="font-semibold text-sm uppercase tracking-widest opacity-80">Product Demo</p>
-              <p className="font-bold text-lg">Watch how it works</p>
-            </div>
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-xl shadow-slate-200/50 dark:shadow-black/50 border border-slate-200 dark:border-slate-800">
+            <iframe
+              src="https://res.cloudinary.com/dhsmcxmeo/video/upload/v1772376629/Beatify_-_Google_Chrome_2026-03-01_21-47-27_qpp0t9.mp4"
+              className="absolute inset-0 w-full h-full"
+              allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+              allowFullScreen
+              frameBorder="0"
+              title="KalBaCa Product Demo"
+            ></iframe>
           </div>
         </section>
 
@@ -164,17 +156,6 @@ export default function BeatifyProject() {
                     Uses utility-first CSS for a clean, responsive design that looks great on any screen size.
                   </p>
                 </div>
-              </div>
-            </div>
-            {/* Stats Card */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 text-center">
-                <div className="text-2xl font-black text-primary">60fps</div>
-                <div className="text-xs font-medium text-slate-500 uppercase tracking-wide mt-1">Smooth Playback</div>
-              </div>
-              <div className="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 text-center">
-                <div className="text-2xl font-black text-primary">0ms</div>
-                <div className="text-xs font-medium text-slate-500 uppercase tracking-wide mt-1">Switch Delay</div>
               </div>
             </div>
           </div>
