@@ -37,7 +37,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <main className="flex-grow pt-24 pb-20 px-6">
+      <main className="grow pt-24 pb-20 px-6 overflow-x-hidden">
         <section className="max-w-4xl mx-auto py-20 md:py-32 flex flex-col items-center text-center">
           <div className="mb-6 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-semibold tracking-wide uppercase dark:bg-blue-900/20 dark:border-blue-800">
             <span className="relative flex h-2 w-2">
@@ -46,7 +46,7 @@ export default function Home() {
             </span>
             {t.hero.available}
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-slate-900 dark:text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-slate-900 dark:text-white">
             MHD Rafy Firdaus
           </h1>
           <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 font-medium max-w-2xl leading-relaxed">
@@ -65,7 +65,7 @@ export default function Home() {
         </section>
 
         <section className="max-w-6xl mx-auto py-16" id="about">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-10 px-2">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 px-2">
             <div>
               <h2 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">{t.about.title}</h2>
               <p className="mt-2 text-slate-500 dark:text-slate-400">{t.about.subtitle}</p>
@@ -136,7 +136,7 @@ export default function Home() {
         </section>
 
         <section className="max-w-6xl mx-auto py-20" id="projects">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 px-2">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 px-2">
             <div>
               <h2 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">{t.projects.title}</h2>
               <p className="mt-2 text-slate-500 dark:text-slate-400">{t.projects.subtitle}</p>
@@ -156,7 +156,7 @@ export default function Home() {
                   className="object-contain transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col grow">
                 <div className="mb-4">
                   <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">{t.projects.mbh.title}</h3>
                   <p className="text-sm text-slate-500 mt-1 dark:text-slate-400">{t.projects.mbh.tagline}</p>
@@ -185,7 +185,7 @@ export default function Home() {
                   className="object-contain transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col grow">
                 <div className="mb-4">
                   <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">{t.projects.kalbaca.title}</h3>
                   <p className="text-sm text-slate-500 mt-1 dark:text-slate-400">{t.projects.kalbaca.tagline}</p>
@@ -214,7 +214,7 @@ export default function Home() {
                   className="object-contain transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col grow">
                 <div className="mb-4">
                   <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">{t.projects.beatify.title}</h3>
                   <p className="text-sm text-slate-500 mt-1 dark:text-slate-400">{t.projects.beatify.tagline}</p>
@@ -235,7 +235,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-12 text-center md:hidden">
-            <a className="inline-flex items-center text-primary font-medium hover:text-blue-700 transition-colors" href="#">
+            <a className="inline-flex items-center text-primary font-medium hover:text-blue-700 transition-colors" href="https://github.com/RafyFirdaus">
               {t.projects.viewGithubProfile}
               <span className="material-symbols-outlined ml-1 text-lg">open_in_new</span>
             </a>
@@ -246,7 +246,7 @@ export default function Home() {
           <div className="flex flex-col items-center text-center">
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">{t.footer.readyTitle}</h2>
             <p className="text-slate-500 dark:text-slate-400 mb-8 max-w-md">{t.footer.readyDesc}</p>
-            <a className="text-3xl md:text-5xl font-bold text-primary hover:text-blue-600 transition-colors tracking-tight mb-12" href="mailto:rafy@example.com">
+            <a className="text-xl sm:text-3xl md:text-5xl font-bold text-primary hover:text-blue-600 transition-colors tracking-tight mb-12 break-all sm:break-normal" href="mailto:rafyfirdaus20@gmail.com">
               rafyfirdaus20@gmail.com
             </a>
             <div className="flex gap-8 mb-12">
