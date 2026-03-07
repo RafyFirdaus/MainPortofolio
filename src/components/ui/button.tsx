@@ -1,5 +1,6 @@
 "use client"
 
+import * as React from "react"
 import { Button as ButtonPrimitive } from "@base-ui/react/button"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -42,7 +43,7 @@ const buttonVariants = cva(
   }
 )
 
-function Button({
+const Button = React.memo(function Button({
   className,
   variant = "default",
   size = "default",
@@ -55,6 +56,6 @@ function Button({
       {...props}
     />
   )
-}
+})
 
 export { Button, buttonVariants }

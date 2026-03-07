@@ -1,12 +1,20 @@
 "use client";
 
+import { useMemo } from 'react';
+
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { dictionaries } from '@/locales/dictionaries';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { MagicCard } from '@/components/ui/magic-card';
+import { BorderBeam } from '@/components/ui/border-beam';
+import { DotPattern } from '@/components/ui/dot-pattern';
+import { cn } from '@/lib/utils';
 
 export default function BeatifyProject() {
   const { language } = useLanguage();
-  const t = dictionaries[language];
+  const t = useMemo(() => dictionaries[language], [language]);
 
   return (
     <>
@@ -19,12 +27,11 @@ export default function BeatifyProject() {
             </div>
             <span className="font-bold text-slate-900 dark:text-white tracking-tight">{t.nav.portfolio}</span>
           </Link>
-          <Link
-            href="/"
-            className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-primary transition-colors dark:text-slate-400"
-          >
-            <span className="material-symbols-outlined text-lg">arrow_back</span>
-            {t.nav.backToHome}
+          <Link href="/">
+            <Button variant="outline" size="sm" className="gap-2">
+              <span className="material-symbols-outlined text-lg">arrow_back</span>
+              {t.nav.backToHome}
+            </Button>
           </Link>
         </div>
       </header>
@@ -42,10 +49,10 @@ export default function BeatifyProject() {
           </div>
           {/* Tech Stack Badges */}
           <div className="flex flex-wrap justify-center gap-3 mt-4">
-            <div className="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider shadow-sm">React 19</div>
-            <div className="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider shadow-sm">Tailwind CSS</div>
-            <div className="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider shadow-sm">HTML5 Audio</div>
-            <div className="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider shadow-sm">React Router v7</div>
+            <Badge variant="secondary">React 19</Badge>
+            <Badge variant="secondary">Tailwind CSS</Badge>
+            <Badge variant="secondary">HTML5 Audio</Badge>
+            <Badge variant="secondary">React Router v7</Badge>
           </div>
         </section>
 
@@ -60,6 +67,7 @@ export default function BeatifyProject() {
               frameBorder="0"
               title="Beatify Product Demo"
             ></iframe>
+            <BorderBeam size={200} duration={8} colorFrom="#137fec" colorTo="#9c40ff" />
           </div>
         </section>
 
@@ -89,41 +97,42 @@ export default function BeatifyProject() {
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{t.projectDetails.keyFeatures}</h3>
               <div className="grid sm:grid-cols-2 gap-6">
-                <div className="flex flex-col p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+                <MagicCard className="flex flex-col p-5 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow" gradientColor="rgba(19, 127, 236, 0.1)">
                   <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                     <span className="material-symbols-outlined">swap_horiz</span>
                   </div>
                   <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t.projectDetails.beatify.feature1Title}</h4>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.projectDetails.beatify.feature1Desc}</p>
-                </div>
-                <div className="flex flex-col p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+                </MagicCard>
+                <MagicCard className="flex flex-col p-5 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow" gradientColor="rgba(19, 127, 236, 0.1)">
                   <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                     <span className="material-symbols-outlined">database</span>
                   </div>
                   <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t.projectDetails.beatify.feature2Title}</h4>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.projectDetails.beatify.feature2Desc}</p>
-                </div>
-                <div className="flex flex-col p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+                </MagicCard>
+                <MagicCard className="flex flex-col p-5 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow" gradientColor="rgba(19, 127, 236, 0.1)">
                   <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                     <span className="material-symbols-outlined">link</span>
                   </div>
                   <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t.projectDetails.beatify.feature3Title}</h4>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.projectDetails.beatify.feature3Desc}</p>
-                </div>
-                <div className="flex flex-col p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+                </MagicCard>
+                <MagicCard className="flex flex-col p-5 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow" gradientColor="rgba(19, 127, 236, 0.1)">
                   <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                     <span className="material-symbols-outlined">route</span>
                   </div>
                   <h4 className="font-bold text-slate-900 dark:text-white mb-2">{t.projectDetails.beatify.feature4Title}</h4>
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{t.projectDetails.beatify.feature4Desc}</p>
-                </div>
+                </MagicCard>
               </div>
             </div>
           </div>
 
           {/* Right Column: Engineering & Architecture */}
           <div className="lg:col-span-5 flex flex-col gap-8 lg:sticky lg:top-24">
-            <div className="bg-slate-50 dark:bg-slate-800/50 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-slate-700">
+            <div className="bg-slate-50 dark:bg-slate-800/50 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-slate-700 relative overflow-hidden">
+              <DotPattern className={cn("opacity-30 dark:opacity-20", "mask-[linear-gradient(to_bottom,white,transparent)]")} />
               <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                 <span className="material-symbols-outlined text-slate-500">code</span>
                 {t.projectDetails.technicalDeepDive}
@@ -176,12 +185,12 @@ export default function BeatifyProject() {
             <span className="material-symbols-outlined text-primary">equalizer</span>
             <span className="text-slate-500 text-sm font-medium">{t.footer.rights}</span>
           </div>
-          <div className="flex gap-6">
-            <Link href="/" className="text-slate-400 hover:text-primary transition-colors text-sm">
-              {t.footer.portfolio}
+          <div className="flex gap-2">
+            <Link href="/">
+              <Button variant="ghost" size="sm">{t.footer.portfolio}</Button>
             </Link>
-            <a href="https://github.com/RafyFirdaus" className="text-slate-400 hover:text-primary transition-colors text-sm">
-              {t.footer.github}
+            <a href="https://github.com/RafyFirdaus">
+              <Button variant="ghost" size="sm">{t.footer.github}</Button>
             </a>
           </div>
         </div>
