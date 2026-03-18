@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useMemo } from 'react';
-import { ThemeToggle } from '@/components/ThemeToggle';
 import { LanguageToggle } from '@/components/LanguageToggle';
 import { Button } from '@/components/ui/button';
 
@@ -33,7 +32,6 @@ const Navbar = React.memo(function Navbar({ t }: NavbarProps) {
           </div>
           <div className="flex items-center gap-2">
             <LanguageToggle />
-            <ThemeToggle />
           </div>
           <a href="#contact">
             <Button className="hidden sm:flex rounded-full text-xs font-semibold h-9 px-4">
