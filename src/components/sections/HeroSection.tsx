@@ -52,7 +52,7 @@ const HeroSection = React.memo(function HeroSection({ t }: HeroSectionProps) {
             </ShimmerButton>
           </a>
           <a href="/CV/Curriculum Vitae Mhd. Rafy Firdaus_3.pdf" download>
-            <Button variant="outline" className="h-12 px-8 rounded-full font-semibold text-base gap-2">
+            <Button variant="outline" className="h-12 px-8 rounded-full font-semibold text-base gap-2 text-slate-900 dark:text-white border-slate-300 dark:border-slate-700 bg-white/5 dark:bg-slate-800/40 hover:bg-slate-100 dark:hover:bg-slate-800">
               {t.hero.downloadCV}
               <span className="material-symbols-outlined text-lg">download</span>
             </Button>
