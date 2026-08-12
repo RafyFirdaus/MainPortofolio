@@ -55,6 +55,12 @@ export const dictionaries = {
         tagline: "Web Music Player",
         desc: "A beautiful web music player. It uses YouTube to give you endless music in a modern design.",
         heroDesc: "Play your YouTube music and local audio files together in one beautiful player.",
+      },
+      waHealthcareCrm: {
+        title: "AI WhatsApp Healthcare CRM & Smart Booking System",
+        tagline: "Rasa NLU, Groq LLM & SmartClinic API",
+        desc: "Enterprise WhatsApp healthcare automation platform integrating Rasa NLU, Groq LLM, SmartClinic API, and Supabase PostgreSQL.",
+        heroDesc: "Enterprise WhatsApp healthcare automation platform. Integrates Rasa NLU for precise medical booking, Groq LLM for 24/7 natural consultations, and real-time synchronization with SmartClinic API & Supabase PostgreSQL.",
       }
     },
     footer: {
@@ -150,6 +156,28 @@ export const dictionaries = {
         tech3Desc: "Connects to a Node.js backend deployed on Vercel using the http package. Handles all CRUD operations, image uploads (multipart/form-data), and user authentication through REST endpoints.",
         tech4Title: "Security & Performance",
         tech4Desc: "JWT auth tokens are stored securely using flutter_secure_storage. The app uses Dart's async features (Future & scheduleMicrotask) to keep the UI smooth while fetching large data or uploading images.",
+      },
+      waHealthcareCrm: {
+        problemText: "Healthcare clinics often lose prospective patients due to slow WhatsApp response times, manual admin queue backlogs, and human error risks when transferring medical appointment data into clinic EHR systems.",
+        solutionText: "A Hybrid AI CRM system that automatically processes patient messages: categorizing general inquiries, handling structured medical appointment bookings, and routing emergency escalations to human admins in real time.",
+        feature1Title: "Dual-Engine Hybrid AI Engine (Rasa NLU + Groq LLM)",
+        feature1Desc: "High-precision medical intent classification (booking/polyclinic/doctor) via Rasa NLU, paired with Groq LLM's ultra-fast inference as a dynamic guardrailed fallback.",
+        feature2Title: "EHR Integration & Automated Booking (SmartClinic API)",
+        feature2Desc: "Instant patient registration and doctor appointment scheduling automatically synced to SmartClinic system without manual admin entry.",
+        feature3Title: "Human Admin Escalation & Handoff System",
+        feature3Desc: "Automatic detection of emergency conditions or special handling needs, seamlessly transferring conversations to human clinic admins.",
+        feature4Title: "Enterprise WA Gateway & Anti-Ban Queue Engine",
+        feature4Desc: "Node.js microservice + Fonnte Gateway featuring smart rate-limiting delay for safe messaging without WhatsApp business ban risks.",
+        feature5Title: "Real-time Patient CRM & Analytics (Supabase)",
+        feature5Desc: "Secure PostgreSQL-backed storage in Supabase for encrypted conversation histories, initial medical traces, and patient transaction logs.",
+        tech1Title: "FastAPI Orchestrator",
+        tech1Desc: "High-performance Python microservice hub orchestrating hybrid message flows between Rasa, Groq, and databases.",
+        tech2Title: "Smart Intent Pipeline",
+        tech2Desc: "Confidence thresholding on Rasa NLU to prevent wrong medical recommendations (hallucination prevention).",
+        tech3Title: "Automated Patient Upsert",
+        tech3Desc: "Automatic phone number normalization and conflict resolution (409) across Supabase & EHR patient records.",
+        tech4Title: "Asynchronous Message Queueing",
+        tech4Desc: "Queue-based background message processing designed to seamlessly handle high concurrency message spikes.",
       }
     }
   },
@@ -209,6 +237,12 @@ export const dictionaries = {
         tagline: "Web Music Player",
         desc: "Pemutar musik web yang mengintegrasikan YouTube untuk menyajikan koleksi musik tanpa batas dalam balutan antarmuka modern.",
         heroDesc: "Mainkan musik YouTube dan file audio lokal Anda secara bersamaan dalam satu pemutar musik yang elegan.",
+      },
+      waHealthcareCrm: {
+        title: "AI WhatsApp Healthcare CRM & Smart Booking System",
+        tagline: "Rasa NLU, Groq LLM & SmartClinic API",
+        desc: "Platform otomatisasi layanan kesehatan enterprise berbasis WhatsApp. Mengintegrasikan Rasa NLU, Groq LLM 24/7, SmartClinic API, dan Supabase PostgreSQL.",
+        heroDesc: "Platform otomatisasi layanan kesehatan enterprise berbasis WhatsApp. Mengintegrasikan Rasa NLU untuk presisi reservasi medis, Groq LLM untuk konsultasi natural 24/7, serta sinkronisasi sistem klinik SmartClinic API dan Supabase PostgreSQL.",
       }
     },
     footer: {
@@ -304,6 +338,28 @@ export const dictionaries = {
         tech3Desc: "Terhubung dengan sistem backend eksternal Node.js di Vercel. Menangani operasi sinkronisasi data dan proses unggah gambar (multipart/form-data) secara efisien.",
         tech4Title: "Security & Performance",
         tech4Desc: "Token otentikasi JWT disimpan menggunakan secure storage secara lokal. Aplikasi memanfaatkan eksekusi asinkron Dart untuk mempertahankan transisi layar yang halus.",
+      },
+      waHealthcareCrm: {
+        problemText: "Klinik sering kehilangan calon pasien akibat respons WhatsApp lambat, penumpukan antrean manual admin, dan risiko human error saat memasukkan data janji medis ke sistem RME klinik.",
+        solutionText: "Sistem CRM AI Hibrida yang memproses pesan pasien secara otomatis: membedakan pertanyaan umum, pendaftaran janji medis terstruktur, hingga eskalasi darurat ke admin manusia secara real-time.",
+        feature1Title: "Mesin AI Hibrida Dual-Engine (Rasa NLU + Groq LLM)",
+        feature1Desc: "Presisi tinggi klasifikasi intent medis (booking/poli/dokter) via Rasa NLU, dipadu kecepatan ultra-tinggi Groq LLM sebagai kecerdasan fallback dinamis ber-guardrail.",
+        feature2Title: "Integrasi RME & Reservasi Otomatis (SmartClinic API)",
+        feature2Desc: "Pendaftaran pasien baru dan eksekusi janji dokter langsung tersinkronisasi otomatis ke sistem SmartClinic tanpa input manual admin.",
+        feature3Title: "Sistem Eskalasi & Handoff Admin Manusia",
+        feature3Desc: "Deteksi otomatis kondisi darurat/kebutuhan penanganan khusus yang langsung mengalihkan percakapan ke admin klinik secara seamless.",
+        feature4Title: "Enterprise WA Gateway & Anti-Ban Queue Engine",
+        feature4Desc: "Microservice Node.js + Fonnte Gateway dilengkapi smart rate-limiting delay untuk pengiriman pesan aman tanpa risiko blokir nomor WhatsApp bisnis.",
+        feature5Title: "Real-time Patient CRM & Analytics (Supabase)",
+        feature5Desc: "Penyimpanan riwayat percakapan, jejak medis awal, dan log transaksi pasien berbasis PostgreSQL aman berenkripsi.",
+        tech1Title: "FastAPI Orchestrator",
+        tech1Desc: "Microservice hub Python berkinerja tinggi mengatur alur pesan hibrida antara Rasa, Groq, dan database.",
+        tech2Title: "Smart Intent Pipeline",
+        tech2Desc: "Confidence thresholding pada Rasa NLU untuk mencegah rekomendasi medis salah (hallucination prevention).",
+        tech3Title: "Automated Patient Upsert",
+        tech3Desc: "Normalisasi nomor telepon otomatis dan conflict resolution (409) pada data pasien Supabase & RME.",
+        tech4Title: "Asynchronous Message Queueing",
+        tech4Desc: "Pengolahan pesan background berbasis antrean untuk menangani lonjakan pesan bersamaan (high concurrency).",
       }
     }
   }
